@@ -1,0 +1,49 @@
+{% extends 'recognizer/base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block breadcrumbs %}
+
+	<!-- ОТНОСИТСЯ К СТРАНИЦЕ С КОНТЕНТОМ, ЗАГОЛОВОК -->
+{% endblock %}
+
+{% block content %}
+<!--    <h1>after_rec</h1>-->
+<!--    <h2>сейчас изменяем запись в БД с id = {{tmp_for_database_object}}</h2>-->
+    <img id="recognize-image" src="{{ current_image.url }}" alt="Изображение">
+<!--    <h3>{{ current_image }}</h3>-->
+<!--    <p>Заполните информацию</p>-->
+<!--    <p>{{ result_of_rec.predictions }}</p>-->
+<!--    <p>{{ result_of_rec.probabilities }}</p>-->
+<!--    <p>{{current_obj.class_by_recognizer}}</p>-->
+    <div class="page-content">
+        {% if current_obj.class_by_recognizer == 'DOG' %}
+        <p>С вероятностью {{ result_of_rec.probabilities.0 }}% на вашем изображении: <b style="color: red;">Собака</b></p>
+        {% elif current_obj.class_by_recognizer == 'CAT' %}
+        <p>С вероятностью {{ result_of_rec.probabilities.0 }}% на вашем изображении: <b style="color: blue;">Кошка</b></p>
+        {% else %}
+        <p>НЕ удалось с достаточной точностью классфицировать ваше изображение (вероятность меньше <b>60%</b>.</p>
+        {% endif %}
+    </div>
+    <form class= 'form-style' method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form_after_rec.as_p }}
+
+        <button type="submit">Отправить</button>
+    </form>
+
+
+<div class="page-content">
+    <h2>Пожалуйста, заполните форму для сбора информации. Охарактеризуйте свое изображение, выбрав одну из категорий и нажмиите кнопку <i>"Отправить"</i></h2>
+    <ul>
+
+        <li><b>EMPTY</b> - поле пока не заполнено (заполните, pls).</li>
+        <li><b>CAT_ONE</b> - вы загрузили изображение с одним котом.</li>
+        <li><b>DOG_ONE</b> - вы загрузили изображение с одной собакой.</li>
+        <li><b>CATS_MANY</b> - вы загрузили изображение с множестовом (2 и больше) котов.</li>
+        <li><b>DOGS_MANY</b> - вы загрузили изображение с множестовом (2 и больше) собак.</li>
+        <li><b>CAT_AND_DOG</b> - вы загрузили изображение на котором присутствуют как собаки, так и коты.</li>
+        <li><b>BAD_IMAGE</b> - вы намеренно загрузили изображение, на котором нет ни собак, ни котов, чтобы посмеяться над классификатором.</li>
+
+    </ul>
+</div>
+{% endblock %}
