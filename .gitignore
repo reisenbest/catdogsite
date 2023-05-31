@@ -4,6 +4,9 @@
 # Игнорирование миграций БД
 **/migrations/
 
+**/admin/
+
+
 # Игнорирование собранных статических файлов
 **/staticfiles/
 
@@ -99,6 +102,7 @@ cover/
 
 # Django stuff:
 *.log
+settings.py
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -201,13 +205,13 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-static_debug/admin
-static/admin
+catdogsite/static_debug/admin/
+catdogsite/static/admin
+catdogsite/static_debugcatdogsite/static_debug/
+
 users_images
 
 # Исключение файлов конфигурации Django
 settings.py
 local_settings.py
 
-catdogsite/static_debugcatdogsite/static_debug
-catdogsite/.gitignore at main · reisenbest/catdogsite

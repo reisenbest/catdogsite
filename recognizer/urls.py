@@ -6,7 +6,7 @@ from catdogsite import settings
 from .views import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('reisenbestadmin/', admin.site.urls),
     path("", main, name='home'),
     path("stats/", stats, name='stats'),
     path('show_stats/', show_stats, name='show_stats'),
