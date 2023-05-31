@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'recognizer.apps.RecognizerConfig',
-    'debug_toolbar',
+
 ]
 
 MIDDLEWARE = [
