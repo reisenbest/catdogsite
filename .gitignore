@@ -201,6 +201,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+static_debug/admin
 static/admin
 users_images
 catdogsite/.gitignore at main · reisenbest/catdogsite
