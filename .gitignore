@@ -208,8 +208,8 @@ cython_debug/
 catdogsite/static_debug/admin/
 catdogsite/static/admin
 catdogsite/static_debugcatdogsite/static_debug/
-
-users_images
+**/admin/
+**/users_images/
 
 # Исключение файлов конфигурации Django
 settings.py
