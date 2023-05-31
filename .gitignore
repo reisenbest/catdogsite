@@ -204,4 +204,10 @@ cython_debug/
 static_debug/admin
 static/admin
 users_images
+
+# Исключение файлов конфигурации Django
+settings.py
+local_settings.py
+
+catdogsite/static_debugcatdogsite/static_debug
 catdogsite/.gitignore at main · reisenbest/catdogsite
