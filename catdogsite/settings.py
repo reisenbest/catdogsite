@@ -25,7 +25,7 @@ SECRET_KEY = 'xp0+92zv=0+e6x4rasl14))7%b7-k8-hyb98jt4vc8ywqmw0_4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['b04c-95-27-41-124.ngrok-free.app', '127.0.0.1']
 
 
 # Application definition
@@ -49,7 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+
+
 ]
 
 ROOT_URLCONF = 'catdogsite.urls'
@@ -139,7 +140,8 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
-
+CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = ['https://b04c-95-27-41-124.ngrok-free.app']
 import os
 from dotenv import load_dotenv
 

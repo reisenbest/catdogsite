@@ -1,10 +1,9 @@
 import urllib
-
+from django.views.decorators.csrf import csrf_protect
 from django.apps import apps
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect, get_object_or_404
 from matplotlib import pyplot as plt
-
 from catdogsite import settings
 from catdogsite.settings import STATIC_ROOT
 from .forms import *
