@@ -2,6 +2,8 @@ DEPLOY-django:
 
 в гитигнор добавить все что связано с админ-панелью, 
 settings.py инфу. сикрет кей, allowed хосты, DB-files
+вся эта инфа добавляестя в файл .env, .env addd to .gitignore
+
 DB
 users-files
 создать новый settings.py без конфеденциальной инфы
