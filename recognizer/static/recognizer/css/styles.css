@@ -86,7 +86,7 @@ body {
 #content {
 
     overflow-y: scroll;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     padding: 20px;
     color: black;
     width: 90%; /* Задает ширину блока */
