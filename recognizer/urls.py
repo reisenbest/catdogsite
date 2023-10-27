@@ -1,8 +1,6 @@
 from django.conf.urls.static import static
-from django.urls import path
 from django.contrib import admin
-from django.urls import include, path
-from catdogsite import settings
+from django.urls import path
 from .views import *
 
 urlpatterns = [
@@ -12,8 +10,8 @@ urlpatterns = [
     path('show_stats/', show_stats, name='show_stats'),
     path("about/", about, name='about'),
     path("feedback/", feedback, name='feedback'),
-    path("recognizeimg/", recognize, name='recognize'),
-    path('after_rec/<int:tmp_for_database_object>/', after_recognize, name='after_recognize'),
+    path("recognizeimg/", recognize_image, name='recognize'),
+    path('after_rec/<int:tmp_for_database_object>/', after_recognize_image, name='after_recognize'),
 
 
 ]
